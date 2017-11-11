@@ -1,6 +1,7 @@
 package com.skilldistillery.shopping.controllers;
 
 import java.util.LinkedHashSet;
+import java.util.List;
 import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,10 +13,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.skilldistillery.shopping.data.ShoppingList;
 import com.skilldistillery.shopping.data.ShoppingListDAO;
 
 @Controller
-@SessionAttributes({"shoppingList", "itemById"})
+@SessionAttributes("shoppingList")
 public class ShoppingListController {
 	
 	@Autowired
@@ -26,9 +28,22 @@ public class ShoppingListController {
 		return new LinkedHashSet<>();
 	}
 	
-	@RequestMapping(path = "home.do", method=RequestMethod.GET)
-	public String home() {
-		return "index";
+//	@RequestMapping(path = "home.do", method=RequestMethod.GET)
+//	public String home() {
+//		return "index";
+//	}
+	
+	@RequestMapping(path="home.do", method=RequestMethod.GET)
+	public ModelAndView IndexPage() {
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("index");
+		ShoppingListIdForm f = new ShoppingListIdForm();
+		mv.addObject("idForm", f);
+		
+		List<ShoppingList> allItems= dao.getShoppingList();
+		mv.addObject("list", allItems);
+		
+		return mv;
 	}
 	
 	@RequestMapping(path="getListItem.do", method=RequestMethod.POST)
