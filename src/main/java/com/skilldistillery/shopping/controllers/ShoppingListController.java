@@ -15,7 +15,7 @@ import org.springframework.web.servlet.ModelAndView;
 import com.skilldistillery.shopping.data.ShoppingListDAO;
 
 @Controller
-@SessionAttributes({"itemList", "currentItem"})
+@SessionAttributes({"shoppingList", "itemById"})
 public class ShoppingListController {
 	
 	@Autowired
@@ -31,17 +31,24 @@ public class ShoppingListController {
 		return "index";
 	}
 	
-	@RequestMapping(path="getListItem.do", method=RequestMethod.POST, params="listId")
-	public ModelAndView getGiraffeById(@RequestParam("listId") Integer id,
-								@ModelAttribute("shoppingList") Set<String> shoppingList) {
+	@RequestMapping(path="getListItem.do", method=RequestMethod.POST)
+	public ModelAndView getItemById(@RequestParam("listId") Integer id) {
 		ModelAndView mv = new ModelAndView("index");
 		
-//		ShoppingList item = dao.getListItemById(id);
-		
-		mv.addObject("shoppingList", dao.getListItemById(id));
-		mv.addObject("shoppingList", dao.getShoppingList());
+		mv.addObject("listItem", dao.getListItemById(id));
 		return mv;
 				
+	}
+	
+	@RequestMapping(path="getAllItem.do", method=RequestMethod.POST)
+	public ModelAndView getWholeList(@ModelAttribute("shoppingList") Set<String> shoppingList) {
+		ModelAndView mv = new ModelAndView("index");
+//		String item = shoppingList.toString();
+//		shoppingList.add(item);
+		
+		mv.addObject("shoppingList", dao.getShoppingList());
+		return mv;
+		
 	}
 
 }

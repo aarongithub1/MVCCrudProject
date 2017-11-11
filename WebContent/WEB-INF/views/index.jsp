@@ -15,12 +15,16 @@
 
 <form action="getListItem.do" method="post">
 	<input type="text" name="listId">
+	<input type="submit" value="Get an item form the list">
+</form>
+<form action="getAllItems.do" method="post">
 	<input type="submit" value="Get a list">
 </form>
 
-<%-- <h2>${shoppingList }</h2> --%>
+<h2>${listItem }</h2>
+
 <c:if test="${not empty shoppingList }">
-<h5>Items you've seen:</h5><br>
+<h5>All Items in the list:</h5><br>
 <c:forEach var="item" items="${shoppingList }">
 <div class="seenItem">${item }</div>
 </c:forEach>

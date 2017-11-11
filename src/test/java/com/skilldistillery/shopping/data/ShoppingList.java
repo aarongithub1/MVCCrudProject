@@ -6,11 +6,6 @@ public class ShoppingList {
 	private int numberOfItems;
 	private double itemPrice;
 	
-//  add another constructor to apply prices to list items
-//  and apply number of items to listItem
-//	private int numberOfItems;
-//	private double ItemPrice;
-	
 	// no-args constructor
 	public ShoppingList() {
 		
