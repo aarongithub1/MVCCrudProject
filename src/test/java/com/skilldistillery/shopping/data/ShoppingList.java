@@ -1,8 +1,15 @@
 package com.skilldistillery.shopping.data;
 
+import javax.validation.constraints.Min;
+import javax.validation.constraints.Size;
+
 public class ShoppingList {
 	private int id;
+	
+	@Size(min=3, max=50, message="Type a list item between 3 and 50 characters.")
 	private String listItem;
+	
+	@Min(value=1, message="Minimum number of item is 1.")
 	private int numberOfItems;
 	private double itemPrice;
 	
