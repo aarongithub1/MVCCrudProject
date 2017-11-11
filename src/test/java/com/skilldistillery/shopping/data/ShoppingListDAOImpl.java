@@ -12,7 +12,9 @@ import org.springframework.stereotype.Component;
 @Component
 public class ShoppingListDAOImpl implements ShoppingListDAO {
 	
+	private int id = 1;
 	Map<Integer, ShoppingList> shoppingList;
+	
 	
 	public ShoppingListDAOImpl() {
 		shoppingList = new HashMap<>();
@@ -20,11 +22,11 @@ public class ShoppingListDAOImpl implements ShoppingListDAO {
 	}
 	
 	public void loadList() {
-		shoppingList.put(1, new ShoppingList(1, "Eggs", 2, 2.00));
-		shoppingList.put(2, new ShoppingList(2, "Spinach", 2, 2.00));
-		shoppingList.put(3, new ShoppingList(3, "Milk", 1, 3.50));
-		shoppingList.put(4, new ShoppingList(4, "Hashbrowns", 1, 4.25));
-		shoppingList.put(5, new ShoppingList(5, "Bacon", 1, 5.50));
+		shoppingList.put(id, new ShoppingList(id++, "Eggs", 2, 2.00));
+		shoppingList.put(id, new ShoppingList(id++, "Spinach", 2, 2.00));
+		shoppingList.put(id, new ShoppingList(id++, "Milk", 1, 3.50));
+		shoppingList.put(id, new ShoppingList(id++, "Hashbrowns", 1, 4.25));
+		shoppingList.put(id, new ShoppingList(id++, "Bacon", 1, 5.50));
 	}
 
 	@Override
