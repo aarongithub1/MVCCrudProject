@@ -1,13 +1,12 @@
 package com.skilldistillery.shopping.controllers;
 
-import java.util.LinkedHashSet;
 import java.util.List;
-import java.util.Set;
 
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -61,10 +60,47 @@ public class ShoppingListController {
 		
 		mv.setViewName("info");
 		
-		ShoppingList shoppingList = dao.getListItemById(f.getId());
-		mv.addObject("shoppingList", shoppingList);
+		ShoppingList list = dao.getListItemById(f.getId());
+		mv.addObject("list", list);
 		return mv;
 	}
+	
+	//add item to the list
+	@RequestMapping(path="add.do", method=RequestMethod.GET)
+	public String addItemToList(Model model) {
+		ShoppingList list = new ShoppingList();
+		model.addAttribute("list", list);
+		
+		return "add";
+	}
+	
+	//doAdd
+	@RequestMapping(path = "addItem.do", method=RequestMethod.POST)
+	public ModelAndView doAdd(@Valid ShoppingList list, Errors e) {
+		ModelAndView mv = new ModelAndView();
+		if(e.hasErrors()) {
+			mv.setViewName("add");
+			return mv;
+		}
+		dao.addItemToList(list);
+			
+		mv.setViewName("added");
+			
+		return mv;
+	}
+	
+	// pass id through href link
+	@RequestMapping(path="info.do")
+	public ModelAndView getItemById(@RequestParam("id") Integer id) {
+		ModelAndView mv = new ModelAndView("info");
+		
+		ShoppingList list = dao.getListItemById(id);
+		mv.addObject("item", list);
+		
+		return mv;
+	}
+	
+	
 	
 //	@RequestMapping(path="getListItem.do", method=RequestMethod.POST)
 //	public ModelAndView getItemById(@RequestParam("listId") Integer id) {
@@ -75,15 +111,15 @@ public class ShoppingListController {
 //				
 //	}
 	
-	@RequestMapping(path="getAllItem.do", method=RequestMethod.POST)
-	public ModelAndView getWholeList(@ModelAttribute("shoppingList") Set<String> shoppingList) {
-		ModelAndView mv = new ModelAndView("index");
-//		String item = shoppingList.toString();
-//		shoppingList.add(item);
-		
-		mv.addObject("shoppingList", dao.getShoppingList());
-		return mv;
-		
-	}
+//	@RequestMapping(path="getAllItems.do", method=RequestMethod.POST)
+//	public ModelAndView getWholeList(@ModelAttribute("shoppingList") Set<String> shoppingList) {
+//		ModelAndView mv = new ModelAndView("index");
+////		String item = shoppingList.toString();
+////		shoppingList.add(item);
+//		
+//		mv.addObject("shoppingList", dao.getShoppingList());
+//		return mv;
+//		
+//	}
 
 }
