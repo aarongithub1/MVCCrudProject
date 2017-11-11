@@ -28,28 +28,33 @@ public class ShoppingListDAOImpl implements ShoppingListDAO {
 		shoppingList.put(id, new ShoppingList(id++, "Hashbrowns", 1, 4.25));
 		shoppingList.put(id, new ShoppingList(id++, "Bacon", 1, 5.50));
 	}
-
+	
+	// add item to list, increment id
+	@Override
+	public ShoppingList addItemToList(ShoppingList s) {
+		s.setId(id++);
+		return shoppingList.put(s.getId(), s);
+	}
+	
+	// get all items in the list
 	@Override
 	public List<ShoppingList> getShoppingList() {
 		return new ArrayList<ShoppingList>(shoppingList.values());
 	}
 	
+	// get list item by id
 	@Override
 	public ShoppingList getListItemById(int id) {
 		return shoppingList.get(id);
 	}
 
-	@Override
-	public ShoppingList addItemToList(ShoppingList s) {
-		return shoppingList.put(s.getId(), s);
-	}
-
-
+	// update list, edit list items
 	@Override
 	public ShoppingList updateShoppingList(ShoppingList s) {
 		return shoppingList.put(s.getId(), s);
 	}
-
+	
+	// delete items from list
 	@Override
 	public ShoppingList deleteItemFromList(ShoppingList s) {
 		return shoppingList.remove(s.getId());
