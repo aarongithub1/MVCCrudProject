@@ -4,8 +4,11 @@ import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -24,8 +27,8 @@ public class ShoppingListController {
 	ShoppingListDAO dao;
 	
 	@ModelAttribute("shoppingList")
-	public Set<String> newShoppingList() {
-		return new LinkedHashSet<>();
+	public ShoppingList newShoppingList() {
+		return new ShoppingList();
 	}
 	
 //	@RequestMapping(path = "home.do", method=RequestMethod.GET)
@@ -47,13 +50,30 @@ public class ShoppingListController {
 	}
 	
 	@RequestMapping(path="getListItem.do", method=RequestMethod.POST)
-	public ModelAndView getItemById(@RequestParam("listId") Integer id) {
+	public ModelAndView getItemByIdForm(@Valid @ModelAttribute("idForm")ShoppingListIdForm f, Errors e) {
 		ModelAndView mv = new ModelAndView("index");
 		
-		mv.addObject("listItem", dao.getListItemById(id));
+		if(e.hasErrors()) {
+			// go to the same page or an error page
+			mv.setViewName("index");
+			return mv;
+		}
+		
+		mv.setViewName("info");
+		
+		ShoppingList shoppingList = dao.getListItemById(f.getId());
+		mv.addObject("shoppingList", shoppingList);
 		return mv;
-				
 	}
+	
+//	@RequestMapping(path="getListItem.do", method=RequestMethod.POST)
+//	public ModelAndView getItemById(@RequestParam("listId") Integer id) {
+//		ModelAndView mv = new ModelAndView("index");
+//		
+//		mv.addObject("listItem", dao.getListItemById(id));
+//		return mv;
+//				
+//	}
 	
 	@RequestMapping(path="getAllItem.do", method=RequestMethod.POST)
 	public ModelAndView getWholeList(@ModelAttribute("shoppingList") Set<String> shoppingList) {

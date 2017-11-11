@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -13,10 +14,51 @@
 
 <h1>Shopping List</h1>
 
-<form action="getListItem.do" method="post">
+<form:form action="getListItem.do" method="post" modelAttribute="idForm">
+	<form:input path="id" /><form:errors path="id" />
+	<input type="submit" value="Get a list item">
+</form:form>
+
+
+<p>
+All items in your shopping list: <br>
+<c:forEach var="list" items="${list }">
+<a href="info.do?id=${list.id }">${list.listItem }</a>
+
+<form method="post" action="delete.do">
+<input type="submit" value="delete" >
+<input type="hidden" name="id" value="${list.id }">
+</form>
+<br>
+
+<form method="post" action="update.do">
+<input type="submit" value="update" >
+<input type="hidden" name="id" value="${list.id }">
+</form>
+
+ID: ${list.id }  Name: ${list.listItem } <br>
+</c:forEach>
+
+</p>
+
+
+<%--
+<c:if test="${not empty bestGiraffe }">
+	The best giraffe is ${bestGiraffe }
+</c:if>
+
+
+ --%>
+
+<p>
+<a href="add.do">Add an Item</a>
+</p>
+
+
+<%-- <form action="getListItem.do" method="post">
 	<input type="text" name="listId">
 	<input type="submit" value="Get an item form the list">
-</form>
+</form> --%>
 <!-- <form action="getAllItems.do" method="post">
 	<input type="submit" value="Get a list">
 </form> -->

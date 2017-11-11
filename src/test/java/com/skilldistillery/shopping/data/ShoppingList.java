@@ -44,6 +44,22 @@ public class ShoppingList {
 		this.listItem = listItem;
 	}
 	
+	// getters/setters Number of items
+	public int getNumberOfItems() {
+		return numberOfItems;
+	}
+	public void setNumberOfItems(int numberOfItems) {
+		this.numberOfItems = numberOfItems;
+	}
+	
+	// getters/setters item price
+	public double getItemPrice() {
+		return itemPrice;
+	}
+	public void setItemPrice(double itemPrice) {
+		this.itemPrice = itemPrice;
+	}
+
 	// hashcode
 	@Override
 	public int hashCode() {
