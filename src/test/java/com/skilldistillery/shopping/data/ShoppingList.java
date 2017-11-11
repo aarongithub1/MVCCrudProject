@@ -11,6 +11,7 @@ public class ShoppingList {
 	
 	@Min(value=1, message="Minimum number of item is 1.")
 	private int numberOfItems;
+	
 	private double itemPrice;
 	
 	// no-args constructor
