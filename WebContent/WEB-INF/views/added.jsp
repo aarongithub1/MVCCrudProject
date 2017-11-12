@@ -65,11 +65,10 @@
 
 <div class="col-xs-1 " align="center">
 
-
 <br><br>
 
-<p>
 
+<%--------------- Logic to select image from images folder -------------%>
 <c:if test="${shoppingList.listItem eq 'Eggs' }">
 <img src="images/eggs.png"/>
 </c:if>
@@ -101,17 +100,13 @@
 
 <br><br>
 
-<%-- Home page button --%>
+<%----------- Home page button ------------%>
 <div class="col-3" align="center">
-<form method="get" action="home.do">
-	<input class="btn btn-lg btn-success btn-block" type="submit" value="Back to home page">
-	<input type="hidden" name="id" value="${list.id }">
-</form>
+	<form method="get" action="home.do">
+		<input class="btn btn-lg btn-success btn-block" type="submit" value="Back to home page">
+		<input type="hidden" name="id" value="${list.id }">
+	</form>
 </div>
-
-<!-- <a href="home.do">Home</a> -->
-
-</p>
 
 </div>
 

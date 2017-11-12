@@ -30,10 +30,6 @@
 
 <body>
 
-<!-- <p> -->
-
-
-
 <%-- ----------------------------- Top container, Title Bar and Add Button ------------------------ --%>
 
 <%-- Title Bar --%>
@@ -93,8 +89,6 @@
         		</div>
         		
         		<div class="col-sm-1">
-        			<%-- <a class="btn btn-primary" href="delete.do?id=${list.id }" role="button">Link to delete</a> --%>
-				<%-- <input type="submit" value="delete" > --%>
 				
 				<%-- Delete Button --%>
 				<form method="post" action="delete.do">
@@ -114,10 +108,6 @@
 </c:forEach>
 </div>
 
-
-<!-- </p> -->
-
-
 	<!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
@@ -126,18 +116,3 @@
 
 </body>
 </html>
-
-<%--
-
-<p>
-<a href="add.do">Add an Item</a>
-</p>
-
-<input type="hidden" name="id" value="${list.id }">
-${list.id } ${list.listItem } <br>
-
- --%>
-<%-- <a href="info.do?id=${list.id }">${list.listItem }</a> --%>
-<%-- <input type="submit" value="update" > --%>
-
-

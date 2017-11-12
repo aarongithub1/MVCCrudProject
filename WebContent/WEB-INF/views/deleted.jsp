@@ -1,18 +1,3 @@
-<%-- <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Deleted</title>
-</head>
-<body>
-
-<h3>"${item }" <br><br>Removed from the list</h3><br>
-<a href="home.do">Home</a>
-</body>
-</html> --%>
-
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
@@ -44,7 +29,7 @@
 
 <body>
 
-<%-- Title Bar --%>
+<%------------------- Title Bar -----------------------%>
 <div class="container-fluid">
 	<div class="row justify-content-center">
 		<div class="col-sm-6 bg-danger">
@@ -83,8 +68,8 @@
 
 <br><br>
 
-<p>
 
+<%--------------- image selection logic ------------------%>
 <c:if test="${shoppingList.listItem eq 'Eggs' }">
 <img src="images/eggs.png"/>
 </c:if>
@@ -116,15 +101,13 @@
 
 <br><br>
 
-<%-- Home page button --%>
+<%--------------- Home page button ------------------%>
 <div class="col-3" align="center">
-<form method="get" action="home.do">
-	<input class="btn btn-lg btn-success btn-block" type="submit" value="Back to home page">
-	<input type="hidden" name="id" value="${list.id }">
-</form>
+	<form method="get" action="home.do">
+		<input class="btn btn-lg btn-success btn-block" type="submit" value="Back to home page">
+		<input type="hidden" name="id" value="${list.id }">
+	</form>
 </div>
-
-</p>
 
 </div>
 

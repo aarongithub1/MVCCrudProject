@@ -67,21 +67,6 @@
 <br><br>
 
 <p>
-<%-- <c:if test="${shoppingList.id == 1 }">
-<img src="images/eggs.png"/>
-</c:if>
-<c:if test="${shoppingList.id == 2 }">
-<img src="images/spinach.png"/>
-</c:if>
-<c:if test="${shoppingList.id == 3 }">
-<img src="images/milk.png"/>
-</c:if>
-<c:if test="${shoppingList.id == 4 }">
-<img src="images/hashbrowns.png"/>
-</c:if>
-<c:if test="${shoppingList.id == 5 }">
-<img src="images/bacon.png"/>
-</c:if> --%>
 
 <c:if test="${shoppingList.listItem eq 'Eggs' }">
 <img src="images/eggs.png"/>
@@ -120,8 +105,6 @@
 	<input type="hidden" name="id" value="${list.id }">
 </form>
 </div>
-
-<!-- <a href="home.do">Home</a> -->
 
 </p>
 

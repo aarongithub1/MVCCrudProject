@@ -27,6 +27,7 @@
 
 </head>
 
+<%---------------- Title Bar ----------------%>
 <body>
 <div class="container-fluid">
 	<div class="row justify-content-center">
@@ -42,7 +43,7 @@
 
 <br><br>
 
-<%-- input fields and ADD button --%>
+<%---------------- input fields and ADD button ----------------%>
 <div class="col-xs-1 " align="center">
 
 <form:form action="addItem.do" method="post" modelAttribute="shoppingList">
@@ -67,6 +68,7 @@
 	
 	<br>	<br>	
 	
+	<%--------- submit button ---------%>
 	<input type="submit" class="btn btn-primary" value="Add item to list">
 	
 </form:form>
