@@ -23,7 +23,7 @@
 	
 	<link rel="stylesheet" href="css/styles.css">
 
-<title>Shopping list info</title>
+<title>Item Updated</title>
 
 </head>
 
@@ -32,11 +32,11 @@
 <%-- Title Bar --%>
 <div class="container-fluid">
 	<div class="row justify-content-center">
-		<div class="col-sm-6 bg-info">
+		<div class="col-sm-6 bg-success">
 		
 			<div class="row justify-content-center">
-			
-				<h1>Shopping list info page</h1>
+				
+				<h1>Your item has been updated</h1>
 	
 			</div>
 			

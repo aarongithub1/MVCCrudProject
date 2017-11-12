@@ -126,7 +126,7 @@ public class ShoppingListController {
 			}
 			dao.updateShoppingList(shoppingList);
 			
-			mv.setViewName("added");
+			mv.setViewName("updated");
 			
 			return mv;
 		}

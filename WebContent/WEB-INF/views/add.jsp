@@ -3,14 +3,21 @@
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
 <html>
+
 <head>
+
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
 <title>Enter an item</title>
+
 </head>
+
 <body>
 
 <h3>Enter data in the item fields:</h3>
+
 
 <form:form action="addItem.do" method="post" modelAttribute="shoppingList">
 	
@@ -19,10 +26,12 @@
 	Item Price: <form:input path="itemPrice"/>  <form:errors path="itemPrice"/>           <br>
 	<input type="submit" value="Add item to list">
 	
-	add a URL input!!
+	<%-- add a URL input!! --%>
 	<%-- Image URL: <form:input path="imgUrl"/>  <form:errors path="imgUrl"/>            <br> --%>
 	
 </form:form>
 
+
 </body>
+
 </html>
