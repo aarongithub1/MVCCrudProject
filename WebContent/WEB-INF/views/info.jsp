@@ -13,10 +13,31 @@
 
 <h2>Shopping list info page</h2>
 
+
+
 ${shoppingList.listItem }<br>
 ${shoppingList.numberOfItems }<br>
 ${shoppingList.itemPrice }<br>
 <p>
+<c:if test="${shoppingList.id == 1 }">
+<img src="images/eggs.png"/>
+</c:if>
+<c:if test="${shoppingList.id == 2 }">
+<img src="images/eggs.png"/>
+</c:if>
+<c:if test="${shoppingList.id == 3 }">
+<img src="images/eggs.png"/>
+</c:if>
+<c:if test="${shoppingList.id == 4 }">
+<img src="images/eggs.png"/>
+</c:if>
+<c:if test="${shoppingList.id == 5 }">
+<img src="images/eggs.png"/>
+</c:if>
+
+<br>
+<br>
+
 <a href="home.do">Home</a>
 <!-- <img src="images/dobby.jpg"/> -->
 
