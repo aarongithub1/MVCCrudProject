@@ -145,30 +145,3 @@ public class ShoppingListController {
 		}
 	
 }
-
-
-
-//	@RequestMapping(path = "home.do", method=RequestMethod.GET)
-//	public String home() {
-//		return "index";
-//	}
-
-//	@RequestMapping(path="getListItem.do", method=RequestMethod.POST)
-//	public ModelAndView getItemById(@RequestParam("listId") Integer id) {
-//		ModelAndView mv = new ModelAndView("index");
-//		
-//		mv.addObject("listItem", dao.getListItemById(id));
-//		return mv;
-//				
-//	}
-	
-//	@RequestMapping(path="getAllItems.do", method=RequestMethod.POST)
-//	public ModelAndView getWholeList(@ModelAttribute("shoppingList") Set<String> shoppingList) {
-//		ModelAndView mv = new ModelAndView("index");
-////		String item = shoppingList.toString();
-////		shoppingList.add(item);
-//		
-//		mv.addObject("shoppingList", dao.getShoppingList());
-//		return mv;
-//		
-//	}
