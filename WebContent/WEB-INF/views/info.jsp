@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -31,29 +32,41 @@
 <%-- Title Bar --%>
 <div class="container-fluid">
 	<div class="row justify-content-center">
-		<div class="col-sm-6 bg-light">
+		<div class="col-sm-6 bg-warning">
 		
-			<!-- <div class="row justify-content-center"> -->
+			<div class="row justify-content-center">
 			
-				<p class="text-center"><h1>Shopping list info page</h1></p>
-				<!-- <h1>Shopping list info page</h1> -->
-			<!-- </div> -->
+				<h1>Shopping list info page</h1>
+	
+			</div>
 			
 		</div>
 	</div>
 </div>
 
+<br><br>
+
 <div class="col-xs-1 " align="center">
 
-<div class="text-center">
-  <img src="..." class="rounded" alt="...">
+	<div class="row justify-content-center">
+		<h2>Item: "${shoppingList.listItem }"</h2>
+	</div>
+
+	<div class="row justify-content-center">
+		<h3>Number of items: ${shoppingList.numberOfItems }</h3>
+	</div>	
+
+	<div class="row justify-content-center">
+		<h3> Price per item: <fmt:formatNumber value="${shoppingList.itemPrice }" type="currency"/></h3>
+	</div>
+	
+	
 </div>
 
+<div class="col-xs-1 " align="center">
 
 
-${shoppingList.listItem }<br>
-${shoppingList.numberOfItems }<br>
-${shoppingList.itemPrice }<br>
+<br><br>
 
 <p>
 <c:if test="${shoppingList.id == 1 }">
@@ -74,10 +87,20 @@ ${shoppingList.itemPrice }<br>
 
 <br><br>
 
-<a href="home.do">Home</a>
-<!-- <img src="images/dobby.jpg"/> -->
+<%-- Home page button --%>
+<div class="col-3" align="center">
+<form method="get" action="home.do">
+	<input class="btn btn-lg btn-success btn-block" type="submit" value="Back to home page">
+	<input type="hidden" name="id" value="${list.id }">
+</form>
+</div>
+
+<!-- <a href="home.do">Home</a> -->
 
 </p>
+
+</div>
+
 
 </body>
 
