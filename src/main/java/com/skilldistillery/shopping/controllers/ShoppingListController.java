@@ -30,10 +30,6 @@ public class ShoppingListController {
 		return new ShoppingList();
 	}
 	
-//	@RequestMapping(path = "home.do", method=RequestMethod.GET)
-//	public String home() {
-//		return "index";
-//	}
 
 //----------------------------------------Display home page--------------------------------------------//
 	//index page
@@ -137,11 +133,25 @@ public class ShoppingListController {
 	
 //--------------------------------------------- Delete -------------------------------------------------//
 	
-	
+		@RequestMapping(path="delete.do")
+		public ModelAndView delete(@RequestParam("id") Integer id) {
+			ModelAndView mv = new ModelAndView("deleted"); //different view
+			
+			ShoppingList shoppingList = dao.getListItemById(id);
+			mv.addObject("item", shoppingList.getListItem());
+			dao.deleteItemFromList(shoppingList);
+			
+			return mv;
+		}
 	
 }
 
 
+
+//	@RequestMapping(path = "home.do", method=RequestMethod.GET)
+//	public String home() {
+//		return "index";
+//	}
 
 //	@RequestMapping(path="getListItem.do", method=RequestMethod.POST)
 //	public ModelAndView getItemById(@RequestParam("listId") Integer id) {

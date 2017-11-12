@@ -14,11 +14,11 @@
 
 <h1>Shopping List</h1>
 
-<form:form action="getListItem.do" method="post" modelAttribute="idForm">
+<%-- <form:form action="getListItem.do" method="post" modelAttribute="idForm">
 	<form:input path="id" /><form:errors path="id" />
 	<input type="submit" value="Get a list item">
 </form:form>
-
+ --%>
 
 <p>
 All items in your shopping list: <br>
