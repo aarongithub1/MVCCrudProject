@@ -98,6 +98,9 @@
 <c:if test="${shoppingList.listItem eq 'Bacon' }">
 <img src="images/bacon.png"/>
 </c:if>
+<c:if test="${shoppingList.listItem eq 'Banana' }">
+<img src="images/banana.png"/>
+</c:if>
 <c:if test="${shoppingList.listItem eq 'Durian' }">
 <img src="images/durian.png"/>
 </c:if>
