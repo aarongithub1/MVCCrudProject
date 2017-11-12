@@ -5,10 +5,15 @@
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+
 <html>
+
 <head>
+
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<!-- Required meta tags -->
+	
+	<!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -19,59 +24,68 @@
 
 <title>Shopping List</title>
 <link rel="stylesheet" href="css/styles.css">
+
 </head>
+
 <body>
 
-<p>
+<!-- <p> -->
 
-<!-- <span class="border border-success"></span> -->
+
+
+<%-- ----------------------------- Top container, Title Bar and Add Button ------------------------ --%>
+
+<%-- Title Bar --%>
+<div class="col-sm-5">
+	<div class="row">
+		<div class="container-fluid">
+			<div class="row justify-content-center">
+		
+				<h1>Your Shopping List</h1><br><br><br>
+			
+			</div>
+		</div>
+	</div>
+</div>
+	
+<%-- Add NEW item Button --%>
+<div class="col-sm-5">		
+	<div class="row justify-content-center">
+	
+			<form method="get" action="add.do">
+			<input class="btn btn-primary" type="submit" value="Add NEW item">
+			</form>
+			
+	</div>
+</div>
+	
+<br>	<br>	<br>
+
+<%-- ---------- Outer container, around buttons ----------- --%>
 
 <div class="container-fluid">
-	
-	<div class="row justify-content-center">
-	
-	<span class="border rounded border-primary ">
-		<h1>Shopping List</h1>
-	</span>
-	
-	</div>
-	
-	<div class="row justify-content-center">
-		All items in your shopping list: <br>
-	</div>
-	
-	<div class="row justify-content-center">
-		<form method="get" action="add.do">
-		<input type="submit" value="add">
-		</form>
-	</div>
-	<br>
-	<br>
-	<br>
-	
-</div>
+
+<%-- --- ForEach Loop for buttons --- --%>
 
 <c:forEach var="list" items="${list }">
-<div class="container-fluid">
 		
-		<%--All Buttons --%>
+		<%--(All Buttons) creates row for each button--%>
         <div class="row">
-        		
 		
-        		<div class="col-sm-4">
-				<%-- <a href="info.do?id=${list.id }">${list.listItem }</a> --%>
+        		<div class="col-sm-3">
+        			
+				<%-- View Info Button --%>
 				<form method="post" action="info.do?id=${list.id }">
-				<input class="btn btn-primary btn-block" type="submit" value="Add ${list.listItem }">
+				<input class="btn btn-info btn-block" type="submit" value="View ${list.listItem }">
 				<input type="hidden" name="id" value="${list.id }">
 				</form>
         		</div>
         		
-        		<div class="col-sm-2 justify-content-center">
-				<%-- <input type="submit" value="update" > --%>
-				
+        		<div class="col-sm-1">
+        		
 				<%-- Update Button --%>
 				<form method="post" action="update.do">
-				<input class="btn btn-success" type="submit" value="update">
+				<input class="btn btn-success btn-block" type="submit" value="update">
 				<input type="hidden" name="id" value="${list.id }">
 				</form>
 				
@@ -91,17 +105,16 @@
 			
         </div> 
         
-</div>
 
-<br>
-<br>
+		<br>
+		<br>
 
-<%-- ${list.id } ${list.listItem } <br> --%>
 
 </c:forEach>
+</div>
 
 
-</p>
+<!-- </p> -->
 
 
 	<!-- Optional JavaScript -->
@@ -112,7 +125,18 @@
 
 </body>
 </html>
-<!-- <p>
+
+<%--
+
+<p>
 <a href="add.do">Add an Item</a>
-</p> -->
-<%-- <input type="hidden" name="id" value="${list.id }"> --%>
+</p>
+
+<input type="hidden" name="id" value="${list.id }">
+${list.id } ${list.listItem } <br>
+
+ --%>
+<%-- <a href="info.do?id=${list.id }">${list.listItem }</a> --%>
+<%-- <input type="submit" value="update" > --%>
+
+
