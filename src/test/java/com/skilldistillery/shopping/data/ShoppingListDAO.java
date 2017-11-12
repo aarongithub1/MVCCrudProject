@@ -7,7 +7,7 @@ public interface ShoppingListDAO {
 	ShoppingList getListItemById(int id);
 	
 	// add items to list
-	ShoppingList addItemToList(ShoppingList g);        //Create
+	ShoppingList addItemToList(ShoppingList s);        //Create
 	
 	// get whole shopping list
 	List<ShoppingList> getShoppingList();              //Retrieve

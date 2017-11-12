@@ -6,10 +6,10 @@ import java.util.List;
 import java.util.Map;
 
 import org.springframework.context.annotation.Primary;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
 @Primary
-@Component
+@Repository
 public class ShoppingListDAOImpl implements ShoppingListDAO {
 	
 	private int id = 1;

@@ -12,18 +12,19 @@
 
 <h3>Enter data in the item fields:</h3>
 
-<form:form action="updateItem.do" method="post" modelAttribute="list">
+<form:form action="updateItem.do" method="post" modelAttribute="shoppingList">
 	
 	Item: <form:input path="listItem"/>  <form:errors path="listItem"/>                        <br>
 	Number of Items: <form:input path="numberOfItems"/>  <form:errors path="numberOfItems"/>   <br>
 	Item Price: <form:input path="itemPrice"/>  <form:errors path="itemPrice"/>                <br>
+	<form:hidden path="id"/>
 	
-	
-	add a URL input!!
-	<%-- Image URL: <form:input path="imgUrl"/>  <form:errors path="imgUrl"/>            <br> --%>
-	<input type="submit" value="Add item to list">
+	<input type="submit" value="Update the Item">
 	
 </form:form>
+
+	<!-- add a URL input!! -->
+	<%-- Image URL: <form:input path="imgUrl"/>  <form:errors path="imgUrl"/>            <br> --%>
 
 </body>
 </html>

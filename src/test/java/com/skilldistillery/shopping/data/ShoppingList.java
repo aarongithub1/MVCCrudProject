@@ -1,5 +1,6 @@
 package com.skilldistillery.shopping.data;
 
+import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.Size;
 
@@ -10,8 +11,10 @@ public class ShoppingList {
 	private String listItem;
 	
 	@Min(value=1, message="Minimum number of item is 1.")
+	@Max(value=99, message="Maximum number of items is 100.")
 	private int numberOfItems;
 	
+	@Min(value=1, message="Minimum price of item is 1.")
 	private double itemPrice;
 	
 	// no-args constructor

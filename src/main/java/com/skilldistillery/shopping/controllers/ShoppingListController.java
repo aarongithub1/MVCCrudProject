@@ -18,8 +18,8 @@ import org.springframework.web.servlet.ModelAndView;
 import com.skilldistillery.shopping.data.ShoppingList;
 import com.skilldistillery.shopping.data.ShoppingListDAO;
 
-@Controller
 @SessionAttributes("shoppingList")
+@Controller
 public class ShoppingListController {
 	
 	@Autowired
@@ -55,21 +55,21 @@ public class ShoppingListController {
 	//add item to the list
 	@RequestMapping(path="add.do", method=RequestMethod.GET)
 	public String addItemToList(Model model) {
-		ShoppingList list = new ShoppingList();
-		model.addAttribute("list", list);
+		ShoppingList s = new ShoppingList();
+		model.addAttribute("shoppingList", s);
 		
 		return "add";
 	}
 	
 	//doAdd
 	@RequestMapping(path = "addItem.do", method=RequestMethod.POST)
-	public ModelAndView doAdd(@Valid ShoppingList list, Errors e) {
+	public ModelAndView doAdd(@Valid ShoppingList shoppingList, Errors e) {
 		ModelAndView mv = new ModelAndView();
 		if(e.hasErrors()) {
 			mv.setViewName("add");
 			return mv;
 		}
-		dao.addItemToList(list);
+		dao.addItemToList(shoppingList);
 		
 		mv.setViewName("added");
 		
@@ -91,8 +91,8 @@ public class ShoppingListController {
 		
 		mv.setViewName("info");
 		
-		ShoppingList list = dao.getListItemById(f.getId());
-		mv.addObject("list", list);
+		ShoppingList shoppingList = dao.getListItemById(f.getId());
+		mv.addObject("ShoppingList", shoppingList);
 		return mv;
 	}
 	
@@ -101,8 +101,8 @@ public class ShoppingListController {
 	public ModelAndView getItemById(@RequestParam("id") Integer id) {
 		ModelAndView mv = new ModelAndView("info");
 		
-		ShoppingList list = dao.getListItemById(id);
-		mv.addObject("item", list);
+		ShoppingList item = dao.getListItemById(id);
+		mv.addObject("shoppingList", item);
 		
 		return mv;
 	}
@@ -114,21 +114,21 @@ public class ShoppingListController {
 	public ModelAndView updateItemInList(@RequestParam("id") Integer id) {
 		ModelAndView mv = new ModelAndView("update");
 		
-		ShoppingList list = dao.getListItemById(id);
-		mv.addObject("list", list);		
+		ShoppingList item = dao.getListItemById(id);
+		mv.addObject("shoppingList", item);		
 
 		return mv;
 	}
 	
 	// doUpdate
 		@RequestMapping(path = "updateItem.do", method=RequestMethod.POST)
-		public ModelAndView doUpdate(@Valid ShoppingList list, Errors e) {
+		public ModelAndView doUpdate(@Valid ShoppingList shoppingList, Errors e) {
 			ModelAndView mv = new ModelAndView();
 			if(e.hasErrors()) {
 				mv.setViewName("update");
 				return mv;
 			}
-			dao.updateShoppingList(list);
+			dao.updateShoppingList(shoppingList);
 			
 			mv.setViewName("added");
 			
