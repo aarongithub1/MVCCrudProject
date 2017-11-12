@@ -26,7 +26,12 @@
 
 <p>
 All items in your shopping list: <br>
+
+
 <c:forEach var="list" items="${list }">
+<div class="container-fluid">
+        <div class="row">
+        
 <a href="info.do?id=${list.id }">${list.listItem }</a>
 
 <form method="post" action="delete.do">
@@ -38,6 +43,10 @@ All items in your shopping list: <br>
 <input type="submit" value="update" >
 <input type="hidden" name="id" value="${list.id }">
 </form>
+
+        This is a row
+        </div> 
+</div>
 <br>
 <br>
 

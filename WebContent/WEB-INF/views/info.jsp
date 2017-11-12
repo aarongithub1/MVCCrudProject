@@ -23,16 +23,16 @@ ${shoppingList.itemPrice }<br>
 <img src="images/eggs.png"/>
 </c:if>
 <c:if test="${shoppingList.id == 2 }">
-<img src="images/eggs.png"/>
+<img src="images/spinach.png"/>
 </c:if>
 <c:if test="${shoppingList.id == 3 }">
-<img src="images/eggs.png"/>
+<img src="images/milk.png"/>
 </c:if>
 <c:if test="${shoppingList.id == 4 }">
-<img src="images/eggs.png"/>
+<img src="images/hashbrowns.png"/>
 </c:if>
 <c:if test="${shoppingList.id == 5 }">
-<img src="images/eggs.png"/>
+<img src="images/bacon.png"/>
 </c:if>
 
 <br>
