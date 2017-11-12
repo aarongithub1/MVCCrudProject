@@ -34,7 +34,9 @@ public class ShoppingListController {
 //	public String home() {
 //		return "index";
 //	}
-	
+
+//----------------------------------------Display home page--------------------------------------------//
+	//index page
 	@RequestMapping(path="home.do", method=RequestMethod.GET)
 	public ModelAndView IndexPage() {
 		ModelAndView mv = new ModelAndView();
@@ -48,23 +50,8 @@ public class ShoppingListController {
 		return mv;
 	}
 	
-	@RequestMapping(path="getListItem.do", method=RequestMethod.POST)
-	public ModelAndView getItemByIdForm(@Valid @ModelAttribute("idForm")ShoppingListIdForm f, Errors e) {
-		ModelAndView mv = new ModelAndView("index");
-		
-		if(e.hasErrors()) {
-			// go to the same page or an error page
-			mv.setViewName("index");
-			return mv;
-		}
-		
-		mv.setViewName("info");
-		
-		ShoppingList list = dao.getListItemById(f.getId());
-		mv.addObject("list", list);
-		return mv;
-	}
 	
+//------------------------------------------- Create -------------------------------------------------//
 	//add item to the list
 	@RequestMapping(path="add.do", method=RequestMethod.GET)
 	public String addItemToList(Model model) {
@@ -83,9 +70,29 @@ public class ShoppingListController {
 			return mv;
 		}
 		dao.addItemToList(list);
-			
+		
 		mv.setViewName("added");
-			
+		
+		return mv;
+	}
+
+	
+//--------------------------------------------- Read -------------------------------------------------//
+	
+	@RequestMapping(path="getListItem.do", method=RequestMethod.POST)
+	public ModelAndView getItemByIdForm(@Valid @ModelAttribute("idForm")ShoppingListIdForm f, Errors e) {
+		ModelAndView mv = new ModelAndView("index");
+		
+		if(e.hasErrors()) {
+			// go to the same page or an error page
+			mv.setViewName("index");
+			return mv;
+		}
+		
+		mv.setViewName("info");
+		
+		ShoppingList list = dao.getListItemById(f.getId());
+		mv.addObject("list", list);
 		return mv;
 	}
 	
@@ -101,7 +108,41 @@ public class ShoppingListController {
 	}
 	
 	
+//--------------------------------------------- Update -------------------------------------------------//
 	
+	@RequestMapping(path="update.do")
+	public ModelAndView updateItemInList(@RequestParam("id") Integer id) {
+		ModelAndView mv = new ModelAndView("update");
+		
+		ShoppingList list = dao.getListItemById(id);
+		mv.addObject("list", list);		
+
+		return mv;
+	}
+	
+	// doUpdate
+		@RequestMapping(path = "updateItem.do", method=RequestMethod.POST)
+		public ModelAndView doUpdate(@Valid ShoppingList list, Errors e) {
+			ModelAndView mv = new ModelAndView();
+			if(e.hasErrors()) {
+				mv.setViewName("update");
+				return mv;
+			}
+			dao.updateShoppingList(list);
+			
+			mv.setViewName("added");
+			
+			return mv;
+		}
+	
+//--------------------------------------------- Delete -------------------------------------------------//
+	
+	
+	
+}
+
+
+
 //	@RequestMapping(path="getListItem.do", method=RequestMethod.POST)
 //	public ModelAndView getItemById(@RequestParam("listId") Integer id) {
 //		ModelAndView mv = new ModelAndView("index");
@@ -121,5 +162,3 @@ public class ShoppingListController {
 //		return mv;
 //		
 //	}
-
-}
