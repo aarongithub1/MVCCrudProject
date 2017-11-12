@@ -65,6 +65,8 @@
 		</div>
 	</div>
 	
+	<br>	<br>	
+	
 	<input type="submit" class="btn btn-primary" value="Add item to list">
 	
 </form:form>

@@ -33,13 +33,11 @@
 <div class="container-fluid">
 	<div class="row justify-content-center">
 		<div class="col-sm-6 bg-success">
-		
 			<div class="row justify-content-center">
 				
 				<h1>Your item has been updated</h1>
 	
 			</div>
-			
 		</div>
 	</div>
 </div>
