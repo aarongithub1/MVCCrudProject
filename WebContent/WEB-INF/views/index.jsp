@@ -22,31 +22,77 @@
 </head>
 <body>
 
-<h1>Shopping List</h1>
-
 <p>
-All items in your shopping list: <br>
 
+<!-- <span class="border border-success"></span> -->
+
+<div class="container-fluid">
+	
+	<div class="row justify-content-center">
+	
+	<span class="border rounded border-primary ">
+		<h1>Shopping List</h1>
+	</span>
+	
+	</div>
+	
+	<div class="row justify-content-center">
+		All items in your shopping list: <br>
+	</div>
+	
+	<div class="row justify-content-center">
+		<form method="get" action="add.do">
+		<input type="submit" value="add">
+		</form>
+	</div>
+	<br>
+	<br>
+	<br>
+	
+</div>
 
 <c:forEach var="list" items="${list }">
 <div class="container-fluid">
+		
+		<%--All Buttons --%>
         <div class="row">
-        
-<a href="info.do?id=${list.id }">${list.listItem }</a>
-
-<form method="post" action="delete.do">
-<input type="submit" value="delete" >
-<input type="hidden" name="id" value="${list.id }">
-</form>
-
-<form method="post" action="update.do">
-<input type="submit" value="update" >
-<input type="hidden" name="id" value="${list.id }">
-</form>
-
-        This is a row
+        		
+		
+        		<div class="col-sm-4">
+				<%-- <a href="info.do?id=${list.id }">${list.listItem }</a> --%>
+				<form method="post" action="info.do?id=${list.id }">
+				<input class="btn btn-primary btn-block" type="submit" value="Add ${list.listItem }">
+				<input type="hidden" name="id" value="${list.id }">
+				</form>
+        		</div>
+        		
+        		<div class="col-sm-2 justify-content-center">
+				<%-- <input type="submit" value="update" > --%>
+				
+				<%-- Update Button --%>
+				<form method="post" action="update.do">
+				<input class="btn btn-success" type="submit" value="update">
+				<input type="hidden" name="id" value="${list.id }">
+				</form>
+				
+        		</div>
+        		
+        		<div class="col-sm-1">
+        			<%-- <a class="btn btn-primary" href="delete.do?id=${list.id }" role="button">Link to delete</a> --%>
+				<%-- <input type="submit" value="delete" > --%>
+				
+				<%-- Delete Button --%>
+				<form method="post" action="delete.do">
+				<input class="btn btn-danger" type="submit" value="delete">
+				<input type="hidden" name="id" value="${list.id }">
+				</form>
+				
+        		</div>
+			
         </div> 
+        
 </div>
+
 <br>
 <br>
 
@@ -54,12 +100,9 @@ All items in your shopping list: <br>
 
 </c:forEach>
 
+
 </p>
 
-
-<p>
-<a href="add.do">Add an Item</a>
-</p>
 
 	<!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -69,3 +112,7 @@ All items in your shopping list: <br>
 
 </body>
 </html>
+<!-- <p>
+<a href="add.do">Add an Item</a>
+</p> -->
+<%-- <input type="hidden" name="id" value="${list.id }"> --%>
