@@ -69,22 +69,21 @@
 <br><br>
 
 <p>
-<%-- <c:choose>
 
-	<c:when test="${shoppingList.listItem eq 'Banana' }"><img src="images/banana.png"/></c:when>
-	
-	<c:when test="${shoppingList.listItem eq 'Durian' }"><img src="images/druian.png"/></c:when>
-	
-	<c:when test="${shoppingList.listItem eq 'Apple' }"><img src="images/apple.png"/></c:when>
-	
-	<c:when test="${shoppingList.listItem eq 'Orange' }"><img src="images/orange.png"/></c:when>
-	
-	<c:otherwise>no image available..</c:otherwise>
-	
-</c:choose> --%>
-
-<c:if test="${shoppingList.listItem eq 'Banana' }">
-<img src="images/banana.png"/>
+<c:if test="${shoppingList.listItem eq 'Eggs' }">
+<img src="images/eggs.png"/>
+</c:if>
+<c:if test="${shoppingList.listItem eq 'Spinach' }">
+<img src="images/spinach.png"/>
+</c:if>
+<c:if test="${shoppingList.listItem eq 'Milk' }">
+<img src="images/milk.png"/>
+</c:if>
+<c:if test="${shoppingList.listItem eq 'Hash browns' }">
+<img src="images/hashbrowns.png"/>
+</c:if>
+<c:if test="${shoppingList.listItem eq 'Bacon' }">
+<img src="images/bacon.png"/>
 </c:if>
 <c:if test="${shoppingList.listItem eq 'Durian' }">
 <img src="images/durian.png"/>

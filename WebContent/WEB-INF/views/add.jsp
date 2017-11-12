@@ -23,7 +23,7 @@
 	
 	<link rel="stylesheet" href="css/styles.css">
 	
-<title>Enter an item</title>
+<title>Add item</title>
 
 </head>
 

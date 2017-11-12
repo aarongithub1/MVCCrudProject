@@ -25,7 +25,7 @@ public class ShoppingListDAOImpl implements ShoppingListDAO {
 		shoppingList.put(id, new ShoppingList(id++, "Eggs", 1, 3.75));
 		shoppingList.put(id, new ShoppingList(id++, "Spinach", 1, 2.00));
 		shoppingList.put(id, new ShoppingList(id++, "Milk", 1, 3.50));
-		shoppingList.put(id, new ShoppingList(id++, "Hashbrowns", 1, 4.25));
+		shoppingList.put(id, new ShoppingList(id++, "Hash browns", 1, 4.25));
 		shoppingList.put(id, new ShoppingList(id++, "Bacon", 1, 5.50));
 	}
 	
