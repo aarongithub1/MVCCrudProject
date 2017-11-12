@@ -4,20 +4,57 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
 <html>
+
 <head>
+
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" 
+    						integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" 
+    						crossorigin="anonymous">
+	
+	<link rel="stylesheet" href="css/styles.css">
+
 <title>Shopping list info</title>
+
 </head>
+
 <body>
 
-<h2>Shopping list info page</h2>
+<%-- Title Bar --%>
+<div class="container-fluid">
+	<div class="row justify-content-center">
+		<div class="col-sm-6 bg-light">
+		
+			<!-- <div class="row justify-content-center"> -->
+			
+				<p class="text-center"><h1>Shopping list info page</h1></p>
+				<!-- <h1>Shopping list info page</h1> -->
+			<!-- </div> -->
+			
+		</div>
+	</div>
+</div>
+
+<div class="col-xs-1 " align="center">
+
+<div class="text-center">
+  <img src="..." class="rounded" alt="...">
+</div>
 
 
 
 ${shoppingList.listItem }<br>
 ${shoppingList.numberOfItems }<br>
 ${shoppingList.itemPrice }<br>
+
 <p>
 <c:if test="${shoppingList.id == 1 }">
 <img src="images/eggs.png"/>
@@ -35,8 +72,7 @@ ${shoppingList.itemPrice }<br>
 <img src="images/bacon.png"/>
 </c:if>
 
-<br>
-<br>
+<br><br>
 
 <a href="home.do">Home</a>
 <!-- <img src="images/dobby.jpg"/> -->
@@ -44,4 +80,11 @@ ${shoppingList.itemPrice }<br>
 </p>
 
 </body>
+
+	<!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+
 </html>
