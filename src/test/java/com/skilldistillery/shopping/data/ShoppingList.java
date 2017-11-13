@@ -11,7 +11,7 @@ public class ShoppingList {
 	private String listItem;
 	
 	@Min(value=1, message="Minimum number of item is 1.")
-	@Max(value=99, message="Maximum number of items is 100.")
+	@Max(value=1000, message="Maximum number of items is 1000.")
 	private int numberOfItems;
 	
 	@Min(value=1, message="Minimum price of item is 1.")
