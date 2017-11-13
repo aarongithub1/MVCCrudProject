@@ -138,7 +138,10 @@ public class ShoppingListController {
 			ModelAndView mv = new ModelAndView("deleted"); //different view
 			
 			ShoppingList item = dao.getListItemById(id);
-//			mv.addObject("item", item.getListItem());
+			
+			//!!!!FOUND MY GHOST!!!!
+			//mv.addObject("item", item.getListItem());
+			
 			mv.addObject("shoppingList", item);
 			
 			dao.deleteItemFromList(item);
