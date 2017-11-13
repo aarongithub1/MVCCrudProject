@@ -8,7 +8,7 @@ It is a Dynamic Web Project created using the Spring Tool Suite 3.9.1 which is b
 
 Other technologies used were Gradle Build Automation System, .jst (JavaScript Templates) with jstl taglibs, such as the core, form, and format tag libraries. I applied EL (Expression Language) tags within the .jst files to create dynamic information on the page.
 
-I employed Bootstrap for my page formatting rather than a .css stylesheet and incorporated mobile first design techniques within Bootstrap.
+I employed Bootstrap for my page formatting rather than a .css stylesheet.
 
 Model View controller
 
@@ -16,7 +16,6 @@ Tomcat v8.0 server using a local host.
 
 Screenshot of my working website...
 
-Instructions for using my website...
-
-
 Link to my website running on Amazon...
+
+http://18.216.143.254:8080/ShoppingList
