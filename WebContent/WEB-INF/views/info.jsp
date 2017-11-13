@@ -23,7 +23,7 @@
 	
 	<link rel="stylesheet" href="css/styles.css">
 
-<title>Shopping list info</title>
+<title>Info Page</title>
 
 </head>
 
@@ -35,7 +35,7 @@
 		<div class="col-sm-6 bg-info">
 			<div class="row justify-content-center">
 			
-				<h1>Shopping list info page</h1>
+				<h1>Info Page</h1>
 	
 			</div>
 		</div>

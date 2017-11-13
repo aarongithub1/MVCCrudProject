@@ -1,31 +1,3 @@
-<%-- <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
-
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Enter an item</title>
-</head>
-<body>
-
-<h3>Enter data in the item fields:</h3>
-
-<form:form action="updateItem.do" method="post" modelAttribute="shoppingList">
-	
-	Item: <form:input path="listItem"/>  <form:errors path="listItem"/>                        <br>
-	Number of Items: <form:input path="numberOfItems"/>  <form:errors path="numberOfItems"/>   <br>
-	Item Price: <form:input path="itemPrice"/>  <form:errors path="itemPrice"/>                <br>
-	<form:hidden path="id"/>
-	
-	<input type="submit" value="Update the Item">
-	
-</form:form>
-
-</body>
-</html> --%>
-
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
@@ -51,7 +23,7 @@
 	
 	<link rel="stylesheet" href="css/styles.css">
 	
-<title>Add item</title>
+<title>Update item</title>
 
 </head>
 

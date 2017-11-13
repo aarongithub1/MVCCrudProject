@@ -34,7 +34,7 @@ public class ShoppingListController {
 //----------------------------------------Display home page--------------------------------------------//
 	//index page
 	@RequestMapping(path="home.do", method=RequestMethod.GET)
-	public ModelAndView IndexPage() {
+	public ModelAndView IndexPage(){
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("index");
 		ShoppingListIdForm f = new ShoppingListIdForm();
@@ -137,9 +137,11 @@ public class ShoppingListController {
 		public ModelAndView delete(@RequestParam("id") Integer id) {
 			ModelAndView mv = new ModelAndView("deleted"); //different view
 			
-			ShoppingList shoppingList = dao.getListItemById(id);
-			mv.addObject("item", shoppingList.getListItem());
-			dao.deleteItemFromList(shoppingList);
+			ShoppingList item = dao.getListItemById(id);
+//			mv.addObject("item", item.getListItem());
+			mv.addObject("shoppingList", item);
+			
+			dao.deleteItemFromList(item);
 			
 			return mv;
 		}

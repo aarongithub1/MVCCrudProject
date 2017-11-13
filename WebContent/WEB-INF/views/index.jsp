@@ -65,7 +65,7 @@
 <%-- --- ForEach Loop for buttons --- --%>
 
 <c:forEach var="list" items="${list }">
-		
+
 		<%--(All Buttons) creates row for each button--%>
         <div class="row">
 		
@@ -81,7 +81,7 @@
         		<div class="col-sm-1">
         		
 				<%-- Update Button --%>
-				<form method="post" action="update.do">
+				<form method="post" action="update.do?id=${list.id }">
 				<input class="btn btn-success btn-block" type="submit" value="update">
 				<input type="hidden" name="id" value="${list.id }">
 				</form>
@@ -91,7 +91,7 @@
         		<div class="col-sm-1">
 				
 				<%-- Delete Button --%>
-				<form method="post" action="delete.do">
+				<form method="post" action="delete.do?id=${list.id }">
 				<input class="btn btn-danger" type="submit" value="delete">
 				<input type="hidden" name="id" value="${list.id }">
 				</form>

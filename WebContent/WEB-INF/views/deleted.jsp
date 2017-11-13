@@ -29,14 +29,14 @@
 
 <body>
 
-<%------------------- Title Bar -----------------------%>
+<%-- Title Bar --%>
 <div class="container-fluid">
 	<div class="row justify-content-center">
 		<div class="col-sm-6 bg-danger">
 		
 			<div class="row justify-content-center">
 				
-				<h1>Deleted from your list</h1>
+				<h1>Item was deleted</h1>
 	
 			</div>
 			
@@ -49,7 +49,7 @@
 <div class="col-xs-1 " align="center">
 
 	<div class="row justify-content-center">
-		<h2>Item: "${item }"</h2>
+		<h2>Item: "${shoppingList.listItem }"</h2>
 	</div>
 
 	<div class="row justify-content-center">
@@ -65,11 +65,10 @@
 
 <div class="col-xs-1 " align="center">
 
-
 <br><br>
 
 
-<%--------------- image selection logic ------------------%>
+<%--------------- Logic to select image from images folder -------------%>
 <c:if test="${shoppingList.listItem eq 'Eggs' }">
 <img src="images/eggs.png"/>
 </c:if>
@@ -101,7 +100,7 @@
 
 <br><br>
 
-<%--------------- Home page button ------------------%>
+<%----------- Home page button ------------%>
 <div class="col-3" align="center">
 	<form method="get" action="home.do">
 		<input class="btn btn-lg btn-success btn-block" type="submit" value="Back to home page">
