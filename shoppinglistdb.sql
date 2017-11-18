@@ -45,10 +45,10 @@ SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `shoppinglistdb`;
-INSERT INTO `item` (`id`, `list_item`, `number_of_items`, `item_price`) VALUES (1, 'Eggs', 0, DEFAULT);
-INSERT INTO `item` (`id`, `list_item`, `number_of_items`, `item_price`) VALUES (2, 'Spinach', 0, DEFAULT);
-INSERT INTO `item` (`id`, `list_item`, `number_of_items`, `item_price`) VALUES (3, 'Milk', 0, DEFAULT);
-INSERT INTO `item` (`id`, `list_item`, `number_of_items`, `item_price`) VALUES (4, 'Hash browns', 0, DEFAULT);
-INSERT INTO `item` (`id`, `list_item`, `number_of_items`, `item_price`) VALUES (5, 'Bacon', 0, DEFAULT);
+INSERT INTO `item` (`id`, `list_item`, `number_of_items`, `item_price`) VALUES (1, 'Eggs', 1, 1.50);
+INSERT INTO `item` (`id`, `list_item`, `number_of_items`, `item_price`) VALUES (2, 'Spinach', 2, 2.50);
+INSERT INTO `item` (`id`, `list_item`, `number_of_items`, `item_price`) VALUES (3, 'Milk', 3, 3.50);
+INSERT INTO `item` (`id`, `list_item`, `number_of_items`, `item_price`) VALUES (4, 'Hash browns', 4, 4.50);
+INSERT INTO `item` (`id`, `list_item`, `number_of_items`, `item_price`) VALUES (5, 'Bacon', 5, 5.50);
 
 COMMIT;
