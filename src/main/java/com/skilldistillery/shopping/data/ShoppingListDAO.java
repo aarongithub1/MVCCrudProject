@@ -12,10 +12,14 @@ public interface ShoppingListDAO {
 	// get whole shopping list
 	List<ShoppingList> getShoppingList();              //Retrieve
 	
+	// get items by keyword
+	List<ShoppingList> getItemByKeyword(String kw);    //Retrieve
+	
 	// update shopping list
 	ShoppingList updateShoppingList(ShoppingList s);   //Update
 	
 	// delete items from the list
 	ShoppingList deleteItemFromList(ShoppingList s);   //Delete
+	
 		
 }

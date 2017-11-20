@@ -73,6 +73,7 @@ public class ShoppingListDAODbImpl implements ShoppingListDAO {
 //----------------------------------- Read All Items ----------------------------------------//
 	@Override
 	public List<ShoppingList> getShoppingList() {
+		
 		List<ShoppingList> allItems = new ArrayList<>();
 		ShoppingList item = null;
 		
@@ -132,7 +133,39 @@ public class ShoppingListDAODbImpl implements ShoppingListDAO {
 		
 	}
 
-	
+	@Override
+	public List<ShoppingList> getItemByKeyword(String kw) {
+		
+		List<ShoppingList> items = new ArrayList<ShoppingList>();
+		ShoppingList item = null;
+
+		try {
+			Connection conn = DriverManager.getConnection(url, user, pass);
+			String sql = "SELECT * FROM item WHERE list_item LIKE ?";
+			PreparedStatement stmt = conn.prepareStatement(sql);
+			stmt.setString(1, "%" + kw + "%");
+
+			ResultSet rs = stmt.executeQuery();
+
+			while (rs.next()) {
+				int id = rs.getInt(1);
+				String listItem = rs.getString(2);
+				int numOfItem = rs.getInt(3);
+				double price = rs.getDouble(4);
+				
+				item = new ShoppingList(id, listItem, numOfItem, price);
+				items.add(item);
+			}
+			
+			rs.close();
+			stmt.close();
+			conn.close();
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return items;
+	}
 
 
 //----------------------------------- Update -------------------------------------------//
