@@ -15,14 +15,14 @@ Model View controller
 Tomcat v8.0 server using a local host.
 
 Screenshot of my working website:
-![Alt text](/images/ss1.png?raw=true "screen shot 1")
-![Alt text](/images/ss2.png?raw=true "screen shot 2")
-![Alt text](/images/ss3.png?raw=true "screen shot 3")
-![Alt text](/images/ss4.png?raw=true "screen shot 4")
-![Alt text](/images/ss5.png?raw=true "screen shot 5")
-![Alt text](/images/ss6.png?raw=true "screen shot 6")
-![Alt text](/images/ss7.png?raw=true "screen shot 7")
-![Alt text](/images/ss8.png?raw=true "screen shot 8")
+![Alt text](WebContent/images/ss1.png?raw=true "screen shot 1")
+![Alt text](WebContent/images/ss2.png?raw=true "screen shot 2")
+![Alt text](WebContent/images/ss3.png?raw=true "screen shot 3")
+![Alt text](WebContent/images/ss4.png?raw=true "screen shot 4")
+![Alt text](WebContent/images/ss5.png?raw=true "screen shot 5")
+![Alt text](WebContent/images/ss6.png?raw=true "screen shot 6")
+![Alt text](WebContent/images/ss7.png?raw=true "screen shot 7")
+![Alt text](WebContent/images/ss8.png?raw=true "screen shot 8")
 
 Link to my website running on Amazon...
 
