@@ -62,7 +62,7 @@
 		
 		<form method="GET" action="getItemByKeyword.do">
 			<div class="row justify-content-center">
-       			<input type="text" value="${kw}" name="keyword" min="1" required="required" placeholder="Enter an item" />
+       			<input type="text" value="${kw}" name="keyword" class="bg-light" min="1" required="required" placeholder="Enter an item" />
        			<input type="submit" value="Find Item by Keyword" class="btn btn-secondary" />
 			</div>
    		</form>
