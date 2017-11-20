@@ -53,9 +53,15 @@
 	<div class="col-sm-5">
 		<div class="row justify-content-center">
 
-			<form method="get" action="add.do">
+			<form method="GET" action="add.do">
 				<input class="btn btn-primary" type="submit" value="Add NEW item">
 			</form>
+			
+			<form method="GET" action="getItemByKeyword.do">
+        			<label>Search by Keyword:</label>
+        			<input type="text" value="${kw}" name="keyword" min="1" required="required" />
+        			<input type="submit" value="Find Item by Keyword" class="btn btn-secondary" />
+    			</form>
 
 		</div>
 	</div>
@@ -73,7 +79,7 @@
 			<%-- View Info Button --%>
 			<div class="col-sm-4">
 
-				<form method="post" action="info.do?id=${list.id }">
+				<form method="POST" action="info.do?id=${list.id }">
 					<input class="btn btn-info btn-block" type="submit"
 						value="View ${list.listItem }"> <input type="hidden"
 						name="id" value="${list.id }">
@@ -84,7 +90,7 @@
 			<%-- Update Button --%>
 			<div class="col-sm-2">
 
-				<form method="post" action="update.do?id=${list.id }">
+				<form method="POST" action="update.do?id=${list.id }">
 					<input class="btn btn-success btn-block" type="submit"
 						value="update"> <input type="hidden" name="id"
 						value="${list.id }">
@@ -95,7 +101,7 @@
 			<%-- Delete Button --%>
 			<div class="col-sm-2">
 
-				<form method="post" action="delete.do?id=${list.id }">
+				<form method="POST" action="delete.do?id=${list.id }">
 					<input class="btn btn-danger" type="submit" value="delete">
 					<input type="hidden" name="id" value="${list.id }">
 				</form>

@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.sd.data.Film;
 import com.skilldistillery.shopping.data.ShoppingList;
 import com.skilldistillery.shopping.data.ShoppingListDAO;
 
@@ -90,6 +91,20 @@ public class ShoppingListController {
 		ShoppingList shoppingList = dao.getListItemById(f.getId());
 		mv.addObject("ShoppingList", shoppingList);
 		return mv;
+	}
+	
+	@RequestMapping("getItemByKeyword.do")
+	public ModelAndView getFilmByKw(@RequestParam("keyword") String kw, Model model) {
+		ModelAndView mv = new ModelAndView("index");
+		
+		List<ShoppingList> items = dao.getItemByKeyword(kw); 
+		
+		ShoppingList item = new ShoppingList(); 
+		model.addAttribute("item", item);
+		
+		mv.addObject("kw", kw); 
+		mv.addObject("listOfItems", items); 
+		return mv; 
 	}
 	
 	// pass id through href link
