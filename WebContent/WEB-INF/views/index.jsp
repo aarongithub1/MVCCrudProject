@@ -19,8 +19,8 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" 
-    						integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" 
-    						crossorigin="anonymous">
+    		integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" 
+    		crossorigin="anonymous">
 
 	<link rel="stylesheet" href="css/styles.css">
 
@@ -33,79 +33,81 @@
 <%-- ----------------------------- Top container, Title Bar and Add Button ------------------------ --%>
 
 <%-- Title Bar --%>
-<div class="col-sm-5">
-	<div class="row">
-		<div class="container-fluid">
+<div class="container-fluid">
+	<div class="row justify-content-center">
+		<div class="col-sm-6  bg-primary">
 			<div class="row justify-content-center">
-		
-				<h1>Your Shopping List</h1><br><br><br>
-			
+				
+				<h1>Your Shopping List</h1>
+	
 			</div>
 		</div>
 	</div>
 </div>
-	
-<%-- Add NEW item Button --%>
-<div class="col-sm-5">		
-	<div class="row justify-content-center">
-	
+
+<br><br>
+
+<div class="col-xs-1 " align="center">
+
+	<%-- Add NEW item Button --%>
+	<div class="col-sm-5">
+		<div class="row justify-content-center">
+
 			<form method="get" action="add.do">
-			<input class="btn btn-primary" type="submit" value="Add NEW item">
+				<input class="btn btn-primary" type="submit" value="Add NEW item">
 			</form>
-			
+
+		</div>
 	</div>
-</div>
-	
-<br>	<br>	<br>
 
-<%-- ---------- Outer container, around buttons ----------- --%>
+	<br> <br> <br>
 
-<div class="container-fluid">
+<%-- ---------------------- Outer container, around buttons --------------------- --%>
 
-<%-- --- ForEach Loop for buttons --- --%>
-
-<c:forEach var="list" items="${list }">
+	<%-- --- ForEach Loop for buttons --- --%>
+	<c:forEach var="list" items="${list }">
 
 		<%--(All Buttons) creates row for each button--%>
-        <div class="row">
-		
-        		<div class="col-sm-3">
-        			
-				<%-- View Info Button --%>
+		<div class="row justify-content-center">
+
+			<%-- View Info Button --%>
+			<div class="col-sm-4">
+
 				<form method="post" action="info.do?id=${list.id }">
-				<input class="btn btn-info btn-block" type="submit" value="View ${list.listItem }">
-				<input type="hidden" name="id" value="${list.id }">
+					<input class="btn btn-info btn-block" type="submit"
+						value="View ${list.listItem }"> <input type="hidden"
+						name="id" value="${list.id }">
 				</form>
-        		</div>
-        		
-        		<div class="col-sm-1">
-        		
-				<%-- Update Button --%>
+				
+			</div>
+
+			<%-- Update Button --%>
+			<div class="col-sm-2">
+
 				<form method="post" action="update.do?id=${list.id }">
-				<input class="btn btn-success btn-block" type="submit" value="update">
-				<input type="hidden" name="id" value="${list.id }">
+					<input class="btn btn-success btn-block" type="submit"
+						value="update"> <input type="hidden" name="id"
+						value="${list.id }">
 				</form>
-				
-        		</div>
-        		
-        		<div class="col-sm-1">
-				
-				<%-- Delete Button --%>
+
+			</div>
+
+			<%-- Delete Button --%>
+			<div class="col-sm-2">
+
 				<form method="post" action="delete.do?id=${list.id }">
-				<input class="btn btn-danger" type="submit" value="delete">
-				<input type="hidden" name="id" value="${list.id }">
+					<input class="btn btn-danger" type="submit" value="delete">
+					<input type="hidden" name="id" value="${list.id }">
 				</form>
-				
-        		</div>
-			
-        </div> 
-        
 
-		<br>
-		<br>
+			</div>
 
-
-</c:forEach>
+		</div>
+		
+		<br>	<br>
+		
+	</c:forEach>
+	
 </div>
 
 	<!-- Optional JavaScript -->
