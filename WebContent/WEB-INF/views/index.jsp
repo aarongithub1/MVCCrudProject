@@ -66,6 +66,14 @@
        			<input type="submit" value="Find Item by Keyword" class="btn btn-secondary" />
 			</div>
    		</form>
+   		
+   		<br>
+   		
+   		<form method="GET" action="home.do">
+			<div class="row justify-content-center">
+       			<input type="submit" value="Reset Page" class="btn btn-warning" />
+			</div>
+   		</form>
 
 	</div>
 

@@ -106,20 +106,6 @@ public class ShoppingListController {
 		return mv; 
 	}
 	
-//	//index page
-//		@RequestMapping(path="home.do", method=RequestMethod.GET)
-//		public ModelAndView IndexPage(){
-//			ModelAndView mv = new ModelAndView();
-//			mv.setViewName("index");
-//			ShoppingListIdForm f = new ShoppingListIdForm();
-//			mv.addObject("idForm", f);
-//			
-//			List<ShoppingList> allItems= dao.getShoppingList();
-//			mv.addObject("list", allItems);
-//			
-//			return mv;
-//		}
-	
 	// pass id through href link
 	@RequestMapping(path="info.do")
 	public ModelAndView getItemById(@RequestParam("id") Integer id) {
