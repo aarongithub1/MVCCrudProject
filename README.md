@@ -14,7 +14,15 @@ Model View controller
 
 Tomcat v8.0 server using a local host.
 
-Screenshot of my working website...
+Screenshot of my working website:
+![Alt text](images/ss1.png?raw=true "Optional Title")
+![Alt text](images/ss2.png?raw=true "Optional Title")
+![Alt text](images/ss3.png?raw=true "Optional Title")
+![Alt text](images/ss4.png?raw=true "Optional Title")
+![Alt text](images/ss5.png?raw=true "Optional Title")
+![Alt text](images/ss6.png?raw=true "Optional Title")
+![Alt text](images/ss7.png?raw=true "Optional Title")
+![Alt text](images/ss8.png?raw=true "Optional Title")
 
 Link to my website running on Amazon...
 
