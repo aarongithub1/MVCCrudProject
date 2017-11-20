@@ -51,19 +51,22 @@
 
 	<%-- Add NEW item Button --%>
 	<div class="col-sm-5">
+	
 		<div class="row justify-content-center">
-
 			<form method="GET" action="add.do">
 				<input class="btn btn-primary" type="submit" value="Add NEW item">
 			</form>
-			
-			<form method="GET" action="getItemByKeyword.do">
-        			<label>Search by Keyword:</label>
-        			<input type="text" value="${kw}" name="keyword" min="1" required="required" />
-        			<input type="submit" value="Find Item by Keyword" class="btn btn-secondary" />
-    			</form>
-
 		</div>
+		
+		<br><br>
+		
+		<form method="GET" action="getItemByKeyword.do">
+			<div class="row justify-content-center">
+       			<input type="text" value="${kw}" name="keyword" min="1" required="required" placeholder="Enter an item" />
+       			<input type="submit" value="Find Item by Keyword" class="btn btn-secondary" />
+			</div>
+   		</form>
+
 	</div>
 
 	<br> <br> <br>
