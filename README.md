@@ -5,9 +5,9 @@ This project is a shopping list that allows a user to search, add, view, edit, a
 
 It is a Dynamic Web Project created using the Spring Tool Suite 3.9.1 which is built from the Eclipse Oxygen.1a (4.7.1a) platform. The backend was coded using Java.
 
-Other technologies used were Gradle Build Automation System, .jst (JavaScript Templates) with jstl taglibs, such as the core, form, and format tag libraries. I applied EL (Expression Language) tags within the .jst files to create dynamic information on the page.
+Other technologies used were Gradle Build Automation System, .jsp (Java Sever Pages) with jstl taglibs, such as the core, form, and format tag libraries. I applied EL (Expression Language) tags within the .jsp files to create dynamic information on the page.
 
-Through the use of MAMP and MySQL Database users are able to modify persistent data and employ search queries.
+Through the use of MAMP and MySQL, Database users are able to modify persistent data and employ search queries.
 
 I used Bootstrap for my page formatting rather than a .css stylesheet.
 
